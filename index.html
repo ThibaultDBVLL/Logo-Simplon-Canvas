@@ -1,0 +1,80 @@
+// J'ai tout mis dans le doc HTML pour pouvoir avancer, parce que rien ne s'affichait
+// en ayant d'un coté le HTML et de l'autre le JS.
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Simplon Occitanie Canvas</title>
+  </head>
+  <body>
+
+    <canvas id="paper" width="500" height="500">
+         ici se trouve mon canvas
+    </canvas>
+
+  <script>
+
+
+  var canvas = document.getElementById("paper"),
+  c = canvas.getContext("2d");
+
+    // Ligne jaune:
+  c.strokeStyle = "yellow";
+	c.lineWidth = 3;
+	c.beginPath();
+	c.moveTo(12, 190);
+	c.lineTo(20, 105);
+	c.lineTo(295, 30);
+	c.lineTo(410, 175);
+	c.moveTo(410, 335);
+	c.lineTo(325, 425);
+	c.lineTo(12, 300);
+	c.stroke();
+
+    //ligne rouge:
+	c.strokeStyle = "red";
+	c.lineWidth = 3;
+
+	c.beginPath();
+	c.moveTo(12, 150);
+	c.lineTo(12, 120);
+	c.lineTo(280, 25);
+	c.lineTo(410, 160);
+	c.moveTo(12, 320);
+	c.lineTo(340, 415);
+	c.lineTo(410, 340);
+	c.stroke();
+
+
+    // Police d'Ecriture:
+  c.beginPath();
+  c.font = "80px sans-serif";
+  c.fillText("SIMPL   N", 20, 200);
+
+  c.beginPath();
+  c.fillStyle = "red";
+  c.font="50px sans-serif";
+  c.fillText("OCCITANIE", 100, 250);
+
+    // Cercle:
+  c.strokeStyle = "red";
+	c.beginPath();
+	c.arc(295, 170, 30, 0, Math.PI * 2, false);
+	c.lineWidth = 5;
+	c.stroke();
+
+    // Les deux carrés:
+	c.beginPath();
+	c.fillStyle= "yellow";
+	c.fillRect(288, 152, 15, 15);
+
+	c.beginPath();
+	c.fillStyle= "yellow";
+	c.fillRect(288, 175, 15, 15);
+
+  </script>
+
+      <style>  </style>
+    </body>
+</html>
